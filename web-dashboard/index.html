@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento de Salas - Campus Inteligente</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Monitoramento - Campus Inteligente</h1>
+    
+    <h2>Sala 101</h2>
+    <div class="dashboard">
+        <div class="card">
+            <h2>Status da Sala 101</h2>
+            <div class="status" id="status-101">Carregando...</div>
+            <div class="last-update" id="statusUpdate-101"></div>
+            
+            <h3>Pessoas Atuais: <span id="numPessoas-101">-</span></h3>
+            
+            <h3>Presentes na Sala:</h3>
+            <table id="presentes-101">
+                <thead>
+                    <tr>
+                        <th>Cartão RFID</th>
+                        <th>Hora de Entrada</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        
+        <div class="card">
+            <h2>Condições Ambientais Atuais - Sala 101</h2>
+            
+            <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
+                <div>
+                    <div class="sensor-value" id="temperatura-101">-</div>
+                    <div class="sensor-unit">Temperatura (°C)</div>
+                </div>
+                <div>
+                    <div class="sensor-value" id="umidade-101">-</div>
+                    <div class="sensor-unit">Umidade (%)</div>
+                </div>
+            </div>
+            
+            <div class="last-update" id="sensorUpdate-101"></div>
+            
+            <div class="chart-container">
+                <canvas id="tempHumChart-101"></canvas>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Histórico de Temperatura - Sala 101</h2>
+            <table id="historicoTemperatura-101">
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Valor (°C)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        
+        <div class="card">
+            <h2>Histórico de Umidade - Sala 101</h2>
+            <table id="historicoUmidade-101">
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Valor (%)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <hr> <h2>Sala 102</h2>
+    <div class="dashboard">
+        <div class="card">
+            <h2>Status da Sala 102</h2>
+            <div class="status" id="status-102">Carregando...</div>
+            <div class="last-update" id="statusUpdate-102"></div>
+            
+            <h3>Pessoas Atuais: <span id="numPessoas-102">-</span></h3>
+            
+            <h3>Presentes na Sala:</h3>
+            <table id="presentes-102">
+                <thead>
+                    <tr>
+                        <th>Cartão RFID</th>
+                        <th>Hora de Entrada</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        
+        <div class="card">
+            <h2>Condições Ambientais Atuais - Sala 102</h2>
+            
+            <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
+                <div>
+                    <div class="sensor-value" id="temperatura-102">-</div>
+                    <div class="sensor-unit">Temperatura (°C)</div>
+                </div>
+                <div>
+                    <div class="sensor-value" id="umidade-102">-</div>
+                    <div class="sensor-unit">Umidade (%)</div>
+                </div>
+            </div>
+            
+            <div class="last-update" id="sensorUpdate-102"></div>
+            
+            <div class="chart-container">
+                <canvas id="tempHumChart-102"></canvas>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Histórico de Temperatura - Sala 102</h2>
+            <table id="historicoTemperatura-102">
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Valor (°C)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        
+        <div class="card">
+            <h2>Histórico de Umidade - Sala 102</h2>
+            <table id="historicoUmidade-102">
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Valor (%)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
